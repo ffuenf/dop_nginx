@@ -9,10 +9,10 @@ default['nginx']['default_site_enabled'] = false
 default['nginx']['init_style'] = "init"
 default['nginx']['webdir'] = "/home/www"
 
-default['nginx']['version'] = "1.4.2"
+default['nginx']['version'] = "1.4.3"
 default['nginx']['source']['version'] = node['nginx']['version']
 default['nginx']['source']['url'] = "http://nginx.org/download/nginx-#{node['nginx']['source']['version']}.tar.gz"
-default['nginx']['checksum'] = "5361ffb7b0ebf8b1a04369bc3d1295eaed091680c1c58115f88d56c8e51f3611"
+default['nginx']['checksum'] = "8d0c34c84ce6dd8ba4442889e8f2599044c90930"
 default['nginx']['source']['modules'] = [
   "http_ssl_module",
   "http_gzip_static_module",
