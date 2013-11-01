@@ -14,13 +14,13 @@ default['nginx']['source']['version'] = node['nginx']['version']
 default['nginx']['source']['url'] = "http://nginx.org/download/nginx-#{node['nginx']['source']['version']}.tar.gz"
 default['nginx']['checksum'] = "8d0c34c84ce6dd8ba4442889e8f2599044c90930"
 default['nginx']['source']['modules'] = [
-  "http_ssl_module",
-  "http_gzip_static_module",
-  "ipv6",
-  "http_realip_module",
-  "http_ssl_module",
-  "http_stub_status_module",
-  "upload_progress_module"
+  "nginx::http_ssl_module",
+  "nginx::http_gzip_static_module",
+  "nginx::ipv6",
+  "nginx::http_realip_module",
+  "nginx::http_ssl_module",
+  "nginx::http_stub_status_module",
+  "nginx::upload_progress_module"
 ]
 default['nginx']['source']['prefix'] = "/opt/nginx"
 default['nginx']['source']['conf_path'] = "#{node['nginx']['dir']}/nginx.conf"
