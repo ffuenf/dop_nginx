@@ -18,7 +18,6 @@ default['nginx']['source']['modules'] = [
   "nginx::http_gzip_static_module",
   "nginx::ipv6",
   "nginx::http_realip_module",
-  "nginx::http_ssl_module",
   "nginx::http_stub_status_module",
   "nginx::upload_progress_module"
 ]
