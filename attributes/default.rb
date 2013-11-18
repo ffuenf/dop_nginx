@@ -19,7 +19,10 @@ default['nginx']['source']['modules'] = [
   "nginx::ipv6",
   "nginx::http_realip_module",
   "nginx::http_stub_status_module",
-  "nginx::upload_progress_module"
+  "nginx::upload_progress_module",
+  "dop_nginx::geoip",
+  "dop_nginx::naxsi",
+  "dop_nginx::ngx_pagespeed"
 ]
 default['nginx']['source']['prefix'] = "/opt/nginx"
 default['nginx']['source']['conf_path'] = "#{node['nginx']['dir']}/nginx.conf"
@@ -28,12 +31,6 @@ default['nginx']['source']['default_configure_flags'] = [
   "--prefix=#{node['nginx']['source']['prefix']}",
   "--conf-path=#{node['nginx']['dir']}/nginx.conf",
   "--sbin-path=#{node['nginx']['source']['sbin_path']}"
-]
-
-default['nginx']['source']['extra_modules'] = [
-  "dop_nginx::geoip",
-  "dop_nginx::naxsi",
-  "dop_nginx::ngx_pagespeed"
 ]
 
 include_attribute "dop_nginx::geoip"
