@@ -33,6 +33,7 @@ remote_file ngx_pagespeed_src_filepath do
   owner "root"
   group "root"
   mode 00644
+  force_unlink true
   not_if { node['nginx']['ngx_pagespeed']['src']['file'] }
 end
 
@@ -41,6 +42,7 @@ cookbook_file ngx_pagespeed_src_filepath do
   owner "root"
   group "root"
   mode 00644
+  force_unlink true
   only_if { node['nginx']['ngx_pagespeed']['src']['file'] }
 end
 
@@ -61,6 +63,7 @@ remote_file ngx_psol_src_filepath do
   owner "root"
   group "root"
   mode 00644
+  force_unlink true
   not_if { node['nginx']['ngx_pagespeed']['psol']['src']['file'] }
 end
 
@@ -69,6 +72,7 @@ cookbook_file ngx_psol_src_filepath do
   owner "root"
   group "root"
   mode 00644
+  force_unlink true
   only_if { node['nginx']['ngx_pagespeed']['psol']['src']['file'] }
 end
 
