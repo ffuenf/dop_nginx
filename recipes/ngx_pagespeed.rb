@@ -24,59 +24,59 @@ mount node['nginx']['ngx_pagespeed']['FileCachePath'] do
   supports [ :remount => true ]
 end
 
-ngx_pagespeed_src_filename = ::File.basename(node['nginx']['ngx_pagespeed']['url'])
 ngx_pagespeed_src_filepath = "#{Chef::Config['file_cache_path']}/ngx_pagespeed-#{node['nginx']['ngx_pagespeed']['version']}"
 ngx_pagespeed_extract_path = "#{Chef::Config['file_cache_path']}"
 
-remote_file ngx_pagespeed_src_filepath do
-  source node['nginx']['ngx_pagespeed']['url']
-  owner "root"
-  group "root"
-  mode 00644
-  not_if { node['nginx']['ngx_pagespeed']['src']['file'] }
-end
-
-cookbook_file ngx_pagespeed_src_filepath do
-  cookbook node['nginx']['ngx_pagespeed']['src']['cookbook']
-  owner "root"
-  group "root"
-  mode 00644
-  only_if { node['nginx']['ngx_pagespeed']['src']['file'] }
-end
-
-bash "extract_ngx_pagespeed" do
-  cwd ::File.dirname(ngx_pagespeed_src_filepath)
-  code <<-EOH
-    mkdir -p #{ngx_pagespeed_extract_path}
-    tar xzf ngx_pagespeed-#{node['nginx']['ngx_pagespeed']['version']} -C #{ngx_pagespeed_extract_path}
-  EOH
+if !::File.exist?(ngx_pagespeed_src_filepath)
+  remote_file ngx_pagespeed_src_filepath do
+    source node['nginx']['ngx_pagespeed']['url']
+    owner "root"
+    group "root"
+    mode 00644
+    not_if { node['nginx']['ngx_pagespeed']['src']['file'] }
+  end
+  cookbook_file ngx_pagespeed_src_filepath do
+    cookbook node['nginx']['ngx_pagespeed']['src']['cookbook']
+    owner "root"
+    group "root"
+    mode 00644
+    only_if { node['nginx']['ngx_pagespeed']['src']['file'] }
+  end
+  bash "extract_ngx_pagespeed" do
+    cwd ::File.dirname(ngx_pagespeed_src_filepath)
+    code <<-EOH
+      mkdir -p #{ngx_pagespeed_extract_path}
+      tar xzf ngx_pagespeed-#{node['nginx']['ngx_pagespeed']['version']} -C #{ngx_pagespeed_extract_path}
+    EOH
+  end
 end
 
 ngx_psol_src_filename = ::File.basename(node['nginx']['ngx_pagespeed']['psol']['url'])
 ngx_psol_src_filepath = "#{Chef::Config['file_cache_path']}/#{ngx_psol_src_filename}"
 ngx_psol_extract_path = "#{ngx_pagespeed_extract_path}/ngx_pagespeed-#{node['nginx']['ngx_pagespeed']['version']}"
 
-remote_file ngx_psol_src_filepath do
-  source node['nginx']['ngx_pagespeed']['psol']['url']
-  owner "root"
-  group "root"
-  mode 00644
-  not_if { node['nginx']['ngx_pagespeed']['psol']['src']['file'] }
-end
-
-cookbook_file ngx_psol_src_filepath do
-  cookbook node['nginx']['ngx_pagespeed']['psol']['src']['cookbook']
-  owner "root"
-  group "root"
-  mode 00644
-  only_if { node['nginx']['ngx_pagespeed']['psol']['src']['file'] }
-end
-
-bash "extract_psol" do
-  cwd ::File.dirname(ngx_psol_src_filepath)
-  code <<-EOH
-    tar xzf #{ngx_psol_src_filename} -C #{ngx_psol_extract_path}
-  EOH
+if !::File.exist?(ngx_psol_src_filepath)
+  remote_file ngx_psol_src_filepath do
+    source node['nginx']['ngx_pagespeed']['psol']['url']
+    owner "root"
+    group "root"
+    mode 00644
+    not_if { node['nginx']['ngx_pagespeed']['psol']['src']['file'] }
+  end
+  cookbook_file ngx_psol_src_filepath do
+    cookbook node['nginx']['ngx_pagespeed']['psol']['src']['cookbook']
+    owner "root"
+    group "root"
+    mode 00644
+    only_if { node['nginx']['ngx_pagespeed']['psol']['src']['file'] }
+  end
+  
+  bash "extract_psol" do
+    cwd ::File.dirname(ngx_psol_src_filepath)
+    code <<-EOH
+      tar xzf #{ngx_psol_src_filename} -C #{ngx_psol_extract_path}
+    EOH
+  end
 end
 
 template "#{node['nginx']['dir']}/conf.d/ngx_pagespeed.conf" do

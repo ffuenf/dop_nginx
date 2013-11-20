@@ -9,10 +9,10 @@ default['nginx']['default_site_enabled'] = false
 default['nginx']['init_style'] = "init"
 default['nginx']['webdir'] = "/home/www"
 
-default['nginx']['version'] = "1.4.3"
+default['nginx']['version'] = "1.4.4"
 default['nginx']['source']['version'] = node['nginx']['version']
 default['nginx']['source']['url'] = "http://nginx.org/download/nginx-#{node['nginx']['source']['version']}.tar.gz"
-default['nginx']['checksum'] = "8d0c34c84ce6dd8ba4442889e8f2599044c90930"
+default['nginx']['checksum'] = "304d5991ccde398af2002c0da980ae240cea9356"
 default['nginx']['source']['modules'] = [
   "nginx::http_ssl_module",
   "nginx::http_gzip_static_module",
@@ -32,6 +32,7 @@ default['nginx']['source']['default_configure_flags'] = [
   "--conf-path=#{node['nginx']['dir']}/nginx.conf",
   "--sbin-path=#{node['nginx']['source']['sbin_path']}"
 ]
+default['nginx']['event'] = "epoll"
 
 include_attribute "dop_nginx::geoip"
 include_attribute "dop_nginx::naxsi"
