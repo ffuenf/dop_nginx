@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of dop_nginx.
 
+## 1.0.2  (January 20, 2014)
+
+* upgrade ngx_pagespeed
+* add option to disable ngx_pagespeed module (useful for local environments)
+
 ## 1.0.1  (November 18, 2013)
 
 * upgrade & fix ngx_pagespeed

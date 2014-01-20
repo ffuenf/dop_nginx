@@ -2,6 +2,6 @@
 # Local modifications will be overwritten.
 #
 # The ngx_pagespeed configuration file.
-pagespeed on;
+pagespeed <%= @params['enabled'] %>;
 pagespeed FileCachePath <%= @params['FileCachePath'] %>;
 pagespeed EnableFilters <%= @params['EnableFilters'] %>;
