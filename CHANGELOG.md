@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_nginx.
 
+## 1.0.3  (February 8, 2014)
+
+* add logrotate
+
 ## 1.0.2  (January 20, 2014)
 
 * upgrade ngx_pagespeed

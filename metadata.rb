@@ -12,6 +12,7 @@ end
 %w{ 
   dop_base
   nginx
+  logrotate
 }.each do |ressource|
   depends ressource
 end
