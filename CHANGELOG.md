@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of dop_nginx.
 
+## 1.0.5  (March 7, 2014)
+
+* upgrade nginx to 1.4.6
+* dont show nginx version (server_tokens)
+
 ## 1.0.4  (February 17, 2014)
 
 * upgrade nginx to 1.4.5
