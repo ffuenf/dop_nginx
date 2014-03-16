@@ -5,3 +5,6 @@
 pagespeed <%= @params['enabled'] %>;
 pagespeed FileCachePath <%= @params['FileCachePath'] %>;
 pagespeed EnableFilters <%= @params['EnableFilters'] %>;
+<% if @params['DisableFilters'] %>
+pagespeed DisableFilters <%= @params['DisableFilters'] %>;
+<% end %>

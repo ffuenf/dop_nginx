@@ -1,9 +1,9 @@
 # # # # #
 # naxsi #
 # # # # #
-default['nginx']['naxsi']['version'] = "0.52"
+default['nginx']['naxsi']['version'] = "0.53-2"
 default['nginx']['naxsi']['url'] = "https://github.com/nbs-system/naxsi/archive/#{node['nginx']['naxsi']['version']}.tar.gz"
-default['nginx']['naxsi']['checksum'] = "381cd5937c265ddcbabf55516028f4b0d1f67222f576c987afb2f676248f8be2"
+default['nginx']['naxsi']['checksum'] = "ada592f5e7f80a6d549cc435ee8720df01a788dc88cf27a7d55521bb7e4c66fa11b9ec28216aff7e13c70a5faf12cb745bd398b8a782ed4dea1eecd04b07e24c"
 
 default['nginx']['naxsi']['enabled'] = false
 default['nginx']['naxsi']['LearningMode'] = false

@@ -17,8 +17,8 @@ Frameworks
 
 Cookbooks
 ---------
-* [dop_base](https://github.com/ffuenf/dop_base)
 * [nginx](https://github.com/opscode-cookbooks/nginx)
+* [logrotate](https://github.com/opscode-cookbooks/logrotate)
 
 License and Author
 ==================

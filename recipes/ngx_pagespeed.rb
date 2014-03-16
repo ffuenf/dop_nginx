@@ -33,14 +33,6 @@ if !::File.exist?(ngx_pagespeed_src_filepath)
     owner "root"
     group "root"
     mode 00644
-    not_if { node['nginx']['ngx_pagespeed']['src']['file'] }
-  end
-  cookbook_file ngx_pagespeed_src_filepath do
-    cookbook node['nginx']['ngx_pagespeed']['src']['cookbook']
-    owner "root"
-    group "root"
-    mode 00644
-    only_if { node['nginx']['ngx_pagespeed']['src']['file'] }
   end
   bash "extract_ngx_pagespeed" do
     cwd ::File.dirname(ngx_pagespeed_src_filepath)
@@ -61,14 +53,6 @@ if !::File.exist?(ngx_psol_src_filepath)
     owner "root"
     group "root"
     mode 00644
-    not_if { node['nginx']['ngx_pagespeed']['psol']['src']['file'] }
-  end
-  cookbook_file ngx_psol_src_filepath do
-    cookbook node['nginx']['ngx_pagespeed']['psol']['src']['cookbook']
-    owner "root"
-    group "root"
-    mode 00644
-    only_if { node['nginx']['ngx_pagespeed']['psol']['src']['file'] }
   end
   
   bash "extract_psol" do
@@ -81,13 +65,14 @@ end
 
 template "#{node['nginx']['dir']}/conf.d/ngx_pagespeed.conf" do
   source "ngx_pagespeed.conf.erb"
+  cookbook "dop_nginx"
   owner "root"
   group "root"
   mode 00644
   variables(
     :params => node['nginx']['ngx_pagespeed']
   )
-  notifies :reload, "service[nginx]"
+  notifies :reload, "service[nginx]", :delayed
 end
 
 node.run_state['nginx_configure_flags'] =

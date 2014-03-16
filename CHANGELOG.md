@@ -2,6 +2,16 @@
 
 This file is used to list changes made in each version of dop_nginx.
 
+## 1.0.6  (March 16, 2014)
+
+* remove dependency to dop_base
+* depreciate geoip and make use of http_geoip_module from opscode cookbook
+* depreciate naxsi and make use of naxsi_module from opscode cookbook
+* upgrade ngx_pagespeed
+* upgrade geoip
+* upgrade naxsi (see https://github.com/opscode-cookbooks/nginx/pull/200)
+* introduce test-kitchen
+
 ## 1.0.5  (March 7, 2014)
 
 * upgrade nginx to 1.4.6

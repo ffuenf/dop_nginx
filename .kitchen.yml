@@ -1,0 +1,28 @@
+---
+driver:
+  name: vagrant
+  driver_config:
+    require_chef_omnibus: latest
+
+provisioner:
+  name: chef_solo
+
+platforms:
+- name: debian-7.4.0-amd64
+  driver_config:
+    box: debian-7.4.0-amd64
+    box_url: https://s3-eu-west-1.amazonaws.com/ffuenf-vagrant-boxes/debian/debian-7.4.0-amd64_virtualbox.box
+
+suites:
+- name: default
+  run_list:
+    - recipe[dop_nginx::default]
+    - recipe[dop_nginx::geoip]
+    - recipe[dop_nginx::naxsi]
+    - recipe[dop_nginx::ngx_pagespeed]
+  attributes: {
+		"nginx": {
+			"version": "1.4.6",
+			"checksum": "1d790fd2b403b0b694a8dbbc28f7e34dbc3ca863"
+		}
+	}
