@@ -41,6 +41,14 @@ if !::File.exist?(ngx_pagespeed_src_filepath)
       tar xzf ngx_pagespeed-#{node['nginx']['ngx_pagespeed']['version']} -C #{ngx_pagespeed_extract_path}
     EOH
   end
+  if node['nginx']['ngx_pagespeed']['canonicalize_javascript_libraries']
+    bash "canonicalize_javascript_libraries" do
+      cwd ::File.dirname(ngx_pagespeed_src_filepath)
+      code <<-EOH
+        #{ngx_pagespeed_extract_path}/scripts/pagespeed_libraries_generator.sh > #{node['nginx']['dir']}/pagespeed_libraries.conf
+      EOH
+    end
+  end
 end
 
 ngx_psol_src_filename = ::File.basename(node['nginx']['ngx_pagespeed']['psol']['url'])

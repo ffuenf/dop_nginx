@@ -2,6 +2,9 @@
 # Local modifications will be overwritten.
 #
 # The ngx_pagespeed configuration file.
+<% if @params['canonicalize_javascript_libraries'] %>
+include pagespeed_libraries.conf;
+<% end %>
 pagespeed <%= @params['enabled'] %>;
 pagespeed FileCachePath <%= @params['FileCachePath'] %>;
 pagespeed EnableFilters <%= @params['EnableFilters'] %>;

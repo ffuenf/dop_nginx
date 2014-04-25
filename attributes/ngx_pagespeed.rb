@@ -12,6 +12,7 @@ default['nginx']['ngx_pagespeed']['checksum'] = "122b7ae2d944f3b74f94ed52c27455d
 default['nginx']['ngx_pagespeed']['cache-url'] = "/var/ngx_pagespeed_cache"
 default['nginx']['ngx_pagespeed']['cache-size'] = "128M"
 default['nginx']['ngx_pagespeed']['enabled'] = "on"
+default['nginx']['ngx_pagespeed']['canonicalize_javascript_libraries'] = false
 default['nginx']['ngx_pagespeed']['FileCachePath'] = node['nginx']['ngx_pagespeed']['cache-url']
 default['nginx']['ngx_pagespeed']['CacheFlushFilename'] = "cache.flush"
 default['nginx']['ngx_pagespeed']['EnableFilters'] = "collapse_whitespace,combine_css,combine_javascript,remove_comments,sprite_images,extend_cache"

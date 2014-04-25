@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of dop_nginx.
 
+## 1.0.7  (April 25, 2014)
+
+* add pagespeed_libraries.conf as it is needed for canonicalize_javascript_libraries
+* upgrade nginx to 1.6.0
+* add spdy module
+
 ## 1.0.6  (March 16, 2014)
 
 * remove dependency to dop_base
