@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of dop_nginx.
 
+## 1.0.8  (May 24, 2014)
+
+* upgrade ngx_pagespeed
+* configure ngx_pagespeed statistics paths
+
 ## 1.0.7  (April 25, 2014)
 
 * add pagespeed_libraries.conf as it is needed for canonicalize_javascript_libraries
