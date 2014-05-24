@@ -7,6 +7,8 @@ include pagespeed_libraries.conf;
 <% end %>
 pagespeed <%= @params['enabled'] %>;
 pagespeed FileCachePath <%= @params['FileCachePath'] %>;
+pagespeed CacheFlushFilename <%= @params['CacheFlushFilename'] %>;
+<%= @params['CacheFlushFilename'] %>;
 pagespeed EnableFilters <%= @params['EnableFilters'] %>;
 <% if @params['DisableFilters'] %>
 pagespeed DisableFilters <%= @params['DisableFilters'] %>;
@@ -25,3 +27,12 @@ pagespeed StatisticsPath <%= @params['StatisticsPath'] %>;
 pagespeed GlobalStatisticsPath <%= @params['GlobalStatisticsPath'] %>;
 pagespeed MessagesPath <%= @params['MessagesPath'] %>;
 pagespeed ConsolePath <%= @params['ConsolePath'] %>;
+
+pagespeed FileCacheSizeKb <%= @params['FileCacheSizeKb'] %>;
+pagespeed FileCacheCleanIntervalMs <%= @params['FileCacheCleanIntervalMs'] %>;
+pagespeed FileCacheInodeLimit <%= @params['FileCacheInodeLimit'] %>;
+pagespeed LRUCacheKbPerProcess <%= @params['LRUCacheKbPerProcess'] %>;
+pagespeed LRUCacheByteLimit <%= @params['LRUCacheByteLimit'] %>;
+pagespeed CacheFlushPollIntervalSec <%= @params['CacheFlushPollIntervalSec'] %>;
+pagespeed DownstreamCacheRewrittenPercentageThreshold <%= @params['DownstreamCacheRewrittenPercentageThreshold'] %>;
+pagespeed RetainComment "<%= @params['RetainComment'] %>";
