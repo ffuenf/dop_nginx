@@ -14,6 +14,12 @@ directory node['nginx']['ngx_pagespeed']['FileCachePath'] do
   action :create
 end
 
+directory node['nginx']['ngx_pagespeed']['LogDir'] do
+  owner node['nginx']['user']
+  group node['nginx']['user']
+  action :create
+end
+
 mount node['nginx']['ngx_pagespeed']['FileCachePath'] do
   device 'tmpfs'
   fstype 'tmpfs'

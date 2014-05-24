@@ -11,6 +11,14 @@ pagespeed EnableFilters <%= @params['EnableFilters'] %>;
 <% if @params['DisableFilters'] %>
 pagespeed DisableFilters <%= @params['DisableFilters'] %>;
 <% end %>
+
+pagespeed Statistics <%= @params['Statistics'] %>;
+pagespeed StatisticsLogging <%= @params['StatisticsLogging'] %>;
+pagespeed LogDir <%= @params['LogDir'] %>;
+pagespeed StatisticsLoggingIntervalMs <%= @params['StatisticsLoggingIntervalMs'] %>;
+pagespeed StatisticsLoggingMaxFileSizeKb <%= @params['StatisticsLoggingMaxFileSizeKb'] %>;
+pagespeed MessageBufferSize <%= @params['MessageBufferSize'] %>;
+
 pagespeed AdminPath <%= @params['AdminPath'] %>;
 pagespeed GlobalAdminPath <%= @params['GlobalAdminPath'] %>;
 pagespeed StatisticsPath <%= @params['StatisticsPath'] %>;
