@@ -4,6 +4,9 @@
 #
 
 include_recipe "nginx"
+include_recipe "python"
+
+python_pip "ngxtop"
 
 directory "#{node['nginx']['dir']}/ssl" do
   owner "root"

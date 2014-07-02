@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_nginx.
 
+## 1.0.9  (July 2, 2014)
+
+* add dependency to python and install [ngxtop](https://github.com/lebinh/ngxtop)
+
 ## 1.0.8  (May 24, 2014)
 
 * upgrade ngx_pagespeed
