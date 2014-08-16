@@ -24,7 +24,6 @@ describe file('/var/ngx_pagespeed_cache') do
       type: 'tmpfs',
       options: {
         mode: 1733,
-        size: '131072k',
         noatime: true,
         noexec: true,
         nosuid: true,

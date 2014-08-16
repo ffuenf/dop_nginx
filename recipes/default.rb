@@ -20,7 +20,7 @@ logrotate_app 'nginx' do
   path "#{node['nginx']['log_dir']}/*.log"
   frequency 'daily'
   rotate 2
-  options %w[missingok compress delaycompress notifempty sharedscripts]
+  options %w(missingok compress delaycompress notifempty sharedscripts)
   postrotate "[-f #{node['nginx']['pid']}] && kill -USR1 `cat #{node['nginx']['pid']}`"
   create '640 nginx adm'
 end
