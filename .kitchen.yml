@@ -5,13 +5,20 @@ driver:
     require_chef_omnibus: latest
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
+  solo_rb:
+    ssl_verify_mode: verify_peer
 
 platforms:
-- name: debian-7.4.0-amd64
+- name: debian-7.6.0-amd64
   driver_config:
-    box: debian-7.4.0-amd64
-    box_url: https://s3-eu-west-1.amazonaws.com/ffuenf-vagrant-boxes/debian/debian-7.4.0-amd64_virtualbox.box
+    box: debian-7.6.0-amd64
+    box_url: https://vagrantcloud.com/ffuenf/debian-7.6.0-amd64/version/2/provider/virtualbox.box
+
+- name: ubuntu-14.04-server-amd64
+  driver_config:
+    box: ubuntu-14.04-server-amd64
+    box_url: https://vagrantcloud.com/ffuenf/ubuntu-14.04-server-amd64/version/2/provider/virtualbox.box
 
 suites:
 - name: default
@@ -20,9 +27,4 @@ suites:
     - recipe[dop_nginx::geoip]
     - recipe[dop_nginx::naxsi]
     - recipe[dop_nginx::ngx_pagespeed]
-  attributes: {
-		"nginx": {
-			"version": "1.4.6",
-			"checksum": "1d790fd2b403b0b694a8dbbc28f7e34dbc3ca863"
-		}
-	}
+  attributes: {}

@@ -9,7 +9,7 @@ RSpec.configure do |c|
   end
 end
 
-pkgs = ["build-essential", "zlib1g-dev", "libpcre3", "libpcre3-dev"]
+pkgs = ['build-essential', 'zlib1g-dev', 'libpcre3', 'libpcre3-dev']
 
 pkgs.each do |pkg|
   describe package(pkg) do
@@ -20,16 +20,15 @@ end
 describe file('/var/ngx_pagespeed_cache') do
   it do
     should be_mounted.with(
-      :device  => 'tmpfs',
-      :type    => 'tmpfs',
-      :options => {
-        :mode => 1733,
-        :size => "131072k",
-        :noatime => true,
-        :noexec => true,
-        :nosuid => true,
-        :nodev => true,
-        :nodev => true,
+      device: 'tmpfs',
+      type: 'tmpfs',
+      options: {
+        mode: 1733,
+        size: '131072k',
+        noatime: true,
+        noexec: true,
+        nosuid: true,
+        nodev: true
       }
     )
   end

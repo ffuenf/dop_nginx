@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_nginx.
 
+## 1.1.0  (August 17, 2014)
+
+* update/integrate testsuites: test-kitchen, foodcritic, rubocop, travis-ci
+
 ## 1.0.9  (July 2, 2014)
 
 * add dependency to python and install [ngxtop](https://github.com/lebinh/ngxtop)
