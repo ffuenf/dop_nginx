@@ -12,7 +12,16 @@ default['nginx']['init_style'] = 'init'
 default['nginx']['webdir'] = '/home/www'
 default['nginx']['server_tokens'] = 'off'
 
-default['nginx']['source']['prefix'] = '/opt/nginx'
+default['nginx']['source']['version'] = node['nginx']['version']
+default['nginx']['source']['prefix'] = "/opt/nginx"
+default['nginx']['source']['conf_path'] = "#{node['nginx']['dir']}/nginx.conf"
+default['nginx']['source']['sbin_path'] = "#{node['nginx']['source']['prefix']}/sbin/nginx"
+default['nginx']['source']['default_configure_flags'] = %W(
+  --prefix=#{node['nginx']['source']['prefix']}
+  --conf-path=#{node['nginx']['dir']}/nginx.conf
+  --sbin-path=#{node['nginx']['source']['sbin_path']}
+)
+
 default['nginx']['source']['modules'] = [
   'nginx::http_ssl_module',
   'nginx::http_gzip_static_module',
@@ -23,10 +32,12 @@ default['nginx']['source']['modules'] = [
   'nginx::upload_progress_module',
   'nginx::http_geoip_module',
   'nginx::naxsi_module',
-  'dop_nginx::ngx_pagespeed'
+  'dop_nginx::ngx_pagespeed',
+  'dop_nginx::redis2'
 ]
 
 default['nginx']['geoip']['path'] = '/var/geoip'
 
 include_attribute 'dop_nginx::naxsi'
 include_attribute 'dop_nginx::ngx_pagespeed'
+include_attribute 'dop_nginx::redis2'

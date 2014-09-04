@@ -28,8 +28,8 @@ suites:
     - recipe[dop_nginx::naxsi]
     - recipe[dop_nginx::ngx_pagespeed]
   attributes: {
-		"nginx": {
-			"version": "1.6.1",
-			"checksum": "07762a7b25b7624142e9d8633eb952e7627501a183c82de7f31b20336f3f997171b366124a41c0fbc8c2a73ed6c68db1a084ca89cf8c5ad4f2bc5e8e7c7be105"
-		}
-	}
+    "nginx": {
+      "version": "1.6.1",
+      "checksum": "07762a7b25b7624142e9d8633eb952e7627501a183c82de7f31b20336f3f997171b366124a41c0fbc8c2a73ed6c68db1a084ca89cf8c5ad4f2bc5e8e7c7be105"
+    }
+  }
