@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_nginx.
 
+## 1.1.1  (September 6, 2014)
+
+* add openresty/redis2-nginx-module (disabled by default)
+
 ## 1.1.0  (August 17, 2014)
 
 * update/integrate testsuites: test-kitchen, foodcritic, rubocop, travis-ci

@@ -32,8 +32,7 @@ default['nginx']['source']['modules'] = [
   'nginx::upload_progress_module',
   'nginx::http_geoip_module',
   'nginx::naxsi_module',
-  'dop_nginx::ngx_pagespeed',
-  'dop_nginx::redis2'
+  'dop_nginx::ngx_pagespeed'
 ]
 
 default['nginx']['geoip']['path'] = '/var/geoip'
