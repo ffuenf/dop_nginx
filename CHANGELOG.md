@@ -7,6 +7,7 @@ This file is used to list changes made in each version of dop_nginx.
 * upgrade nginx
 * upgrade ngx_pagespeed
 * upgrade geoip
+* track feature/ngx_pagespeed of nginx cookbook
 
 ## 1.1.1  (September 6, 2014)
 
