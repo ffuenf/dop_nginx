@@ -4,8 +4,8 @@
 default['nginx']['unsecure_port'] = 80
 default['nginx']['secure_port'] = 443
 
-default['nginx']['version'] = '1.6.1'
-default['nginx']['checksum'] = '07762a7b25b7624142e9d8633eb952e7627501a183c82de7f31b20336f3f997171b366124a41c0fbc8c2a73ed6c68db1a084ca89cf8c5ad4f2bc5e8e7c7be105'
+default['nginx']['version'] = '1.6.2'
+default['nginx']['checksum'] = '5698655ebe847bab7cc2531711f02e17257e361559ecf13d424019a5f8f07f54e78c4c73f97e5de063c4a70d13a236ca855b73a962053cd21d44f9621a5ac600'
 default['nginx']['install_method'] = 'source'
 default['nginx']['default_site_enabled'] = false
 default['nginx']['init_style'] = 'init'
