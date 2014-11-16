@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of dop_nginx.
 
+## 1.1.3  (November 16, 2014)
+
+* upgrade geoip
+* upgrade ngx_pagespeed
+* remove openresty/redis2-nginx-module
+* serverspec v2 support
+
 ## 1.1.2  (September 22, 2014)
 
 * upgrade nginx
