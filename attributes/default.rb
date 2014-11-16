@@ -39,4 +39,3 @@ default['nginx']['geoip']['path'] = '/var/geoip'
 
 include_attribute 'dop_nginx::naxsi'
 include_attribute 'dop_nginx::ngx_pagespeed'
-include_attribute 'dop_nginx::redis2'
