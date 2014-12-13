@@ -13,12 +13,12 @@ platforms:
 - name: debian-7.7.0-amd64
   driver_config:
     box: debian-7.7.0-amd64
-    box_url: https://vagrantcloud.com/ffuenf/boxes/debian-7.7.0-amd64/versions/2/providers/virtualbox.box
+    box_url: https://atlas.hashicorp.com/ffuenf/boxes/debian-7.7.0-amd64/versions/1.0.1/providers/virtualbox.box
 
 - name: ubuntu-14.04.1-server-amd64
   driver_config:
     box: ubuntu-14.04.1-server-amd64
-    box_url: https://vagrantcloud.com/ffuenf/boxes/ubuntu-14.04.1-server-amd64/versions/12/providers/virtualbox.box
+    box_url: https://atlas.hashicorp.com/ffuenf/boxes/ubuntu-14.04.1-server-amd64/versions/1.0.1/providers/virtualbox.box
 
 suites:
 - name: default
@@ -30,6 +30,6 @@ suites:
   attributes: {
     "nginx": {
       "version": "1.6.2",
-      "checksum": "5698655ebe847bab7cc2531711f02e17257e361559ecf13d424019a5f8f07f54e78c4c73f97e5de063c4a70d13a236ca855b73a962053cd21d44f9621a5ac600"
+      "checksum": "b5608c2959d3e7ad09b20fc8f9e5bd4bc87b3bc8ba5936a513c04ed8f1391a18"
     }
   }
