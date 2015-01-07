@@ -1,4 +1,4 @@
-source 'https://supermarket.getchef.com'
+source 'https://supermarket.chef.io'
 
 cookbook 'nginx', git: 'https://github.com/ffuenf/nginx', ref: 'master'
 
