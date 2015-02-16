@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_nginx.
 
+## 1.2.3 (February 16, 2015)
+
+* fix ownership of logrotate/nginx
+
 ## 1.2.2 (January 07, 2015)
 
 * update checksums

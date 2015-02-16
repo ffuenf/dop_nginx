@@ -22,5 +22,5 @@ logrotate_app 'nginx' do
   rotate 2
   options %w(missingok compress delaycompress notifempty sharedscripts)
   postrotate "[-f #{node['nginx']['pid']}] && kill -USR1 `cat #{node['nginx']['pid']}`"
-  create '640 nginx adm'
+  create "644 #{node['nginx']['user']} adm"
 end
