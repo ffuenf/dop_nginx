@@ -2,6 +2,14 @@
 
 This file is used to list changes made in each version of dop_nginx.
 
+## 1.2.4 (September 08, 2015)
+
+* fix update of geoip database via cron (mv current db if it exists)
+* allow DIsallow setting for ngx_pagespeed
+* upgrade geoip
+* upgrade ngx_pagespeed
+* upgrade nginx
+
 ## 1.2.3 (February 16, 2015)
 
 * fix ownership of logrotate/nginx
