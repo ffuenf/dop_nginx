@@ -1,13 +1,13 @@
 # # # # # # # # #
 # ngx_pagespeed #
 # # # # # # # # #
-default['nginx']['ngx_pagespeed']['version'] = '1.9.32.6-beta'
-default['nginx']['ngx_pagespeed']['url'] = "https://codeload.github.com/pagespeed/ngx_pagespeed/tar.gz/v#{node['nginx']['ngx_pagespeed']['version']}"
-default['nginx']['ngx_pagespeed']['checksum'] = '281884005ce4438913fe8fdc114a6844071a87d3189a5ce0d5d39bbbd785b9fb'
+default['nginx']['ngx_pagespeed']['version'] = '1.9.32.10-beta'
+default['nginx']['ngx_pagespeed']['url'] = "https://github.com/pagespeed/ngx_pagespeed/archive/release-#{node['nginx']['ngx_pagespeed']['version']}-beta.tar.gz"
+default['nginx']['ngx_pagespeed']['checksum'] = '2559470d6c5fc0beb2c82e07d77af91d5bf3311c4476723e3f31e0638a20a734'
 
-default['nginx']['ngx_pagespeed']['psol']['version'] = '1.9.32.6'
+default['nginx']['ngx_pagespeed']['psol']['version'] = '1.9.32.10'
 default['nginx']['ngx_pagespeed']['psol']['url'] = "https://dl.google.com/dl/page-speed/psol/#{node['nginx']['ngx_pagespeed']['psol']['version']}.tar.gz"
-default['nginx']['ngx_pagespeed']['checksum'] = 'b2285a1a9f03a5ff4107852480edf28fedb1804ab1dfde45ef0abb4150ef9912'
+default['nginx']['ngx_pagespeed']['checksum'] = 'de4995f986cffc3b683db9e718f2471e3410af9c65c8988e439ae3978390abf7'
 
 default['nginx']['ngx_pagespeed']['cache-url'] = '/var/ngx_pagespeed_cache'
 default['nginx']['ngx_pagespeed']['cache-size'] = '512M'

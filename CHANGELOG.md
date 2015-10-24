@@ -2,10 +2,18 @@
 
 This file is used to list changes made in each version of dop_nginx.
 
+## 1.2.5 (October 24, 2015)
+
+* fix Disallow setting for ngx_pagespeed
+* upgrade geoip
+* upgrade ngx_pagespeed
+* upgrade naxsi
+* update testsuites
+
 ## 1.2.4 (September 08, 2015)
 
 * fix update of geoip database via cron (mv current db if it exists)
-* allow DIsallow setting for ngx_pagespeed
+* allow Disallow setting for ngx_pagespeed
 * upgrade geoip
 * upgrade ngx_pagespeed
 * upgrade nginx
